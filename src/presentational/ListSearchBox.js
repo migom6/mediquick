@@ -15,43 +15,41 @@ const loadOptions = (inputValue, callback) => {
   }, 10);
 };
 
-export default class WithCallbacks extends Component {
+export default class ListSearchBox extends Component {
   render() {
     return (
-      <div>
-        <AsyncSelect
-          className={`react-select-container ${styled}`}
-          classNamePrefix="react-select"
-          autoFocus
-          isMulti
-          cacheOptions
-          components={makeAnimated()}
-          loadOptions={loadOptions}
-          defaultOptions
-          onInputChange={this.handleInputChange}
-          placeholder="What are your symptoms?"
-        />
-      </div>
+      <AsyncSelect
+        className={`react-select-container ${styled}`}
+        classNamePrefix="react-select"
+        autoFocus
+        isMulti
+        cacheOptions
+        components={makeAnimated()}
+        loadOptions={loadOptions}
+        defaultOptions
+        onInputChange={this.handleInputChange}
+        placeholder="What are your symptoms?"
+      />
     );
   }
 }
 
 const styled = css`
+  width: 100%;
+  max-width: 560px;
+  border-radius: 4px;
+  border-color: #0984e3;
   .react-select__control {
-    color: "green";
-    border-radius: 28px;
+    border-radius: 4px;
     min-height: 56px;
-    border-color: #0fbcf9;
+    border-color: #0984e3;
   }
   .react-select__value-container {
-    color: "green";
   }
   .react-select__clear-indicators {
-    color: "green";
-    backgroundcolor: "orange";
   }
   .react-select__multi-value {
-    border-radius: 28px;
+    border-radius: 4px;
     min-height: 36px;
   }
   .react-select__multi-value__label {
@@ -62,13 +60,13 @@ const styled = css`
     font-size: 1.2em;
   }
   .react-select__multi-value__remove {
-    border-radius: 0 13px 13px 0;
+    border-radius: 0 4px 4px 0;
   }
   .react-select__placeholder {
     font-size: 1.2em;
   }
   .react-select__dropdown-indicator .react-select__indicator-separator {
-    border-color: #0fbcf9;
-    backgroundcolor: #0fbcf9;
+    border-color: #0984e3;
+    backgroundcolor: #0984e3;
   }
 `;

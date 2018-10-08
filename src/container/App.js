@@ -1,14 +1,41 @@
-import React, { Component, Fragment } from "react";
-import SearchBox from "../presentational/SearchBox";
+import React, { Component } from "react";
+import SearchBox from "./SearchBox";
+import Header from "../presentational/Header";
+import GoButton from "../presentational/GoButton";
+import Personal from "../presentational/Personal";
+
+import { css } from "emotion";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { toggle: false };
+  }
   render() {
     return (
-      <Fragment>
+      <div className={styled}>
+        <Header />
+        <Personal />
         <SearchBox />
-      </Fragment>
+        <GoButton>Search</GoButton>
+      </div>
     );
   }
 }
+
+const styled = css`
+  display: flex;
+  flex-direction: column;
+  padding-top: 40;
+  padding-left: 20%;
+  padding-right: 20%;
+  font-family: "Work Sans", sans-serif;
+  @media (min-width: 320px) and (max-width: 480px) {
+      padding-left: 0%;
+      padding-right: 0%;
+    }
+  }
+
+`;
 
 export default App;
