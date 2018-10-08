@@ -25,11 +25,27 @@ const header = css`
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  color: #442ab9;
+  color: #000;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 16px 0px;
+  letter-spacing: 0.1em;
+  font-family: "Abril Fatface", cursive;
+  a {
+    color: black;
+  }
+  a:link {
+  }
+  a:visited {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  a:active {
+    text-decoration: none;
+  }
   .right {
     display: -webkit-box;
     display: -ms-flexbox;

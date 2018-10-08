@@ -2,8 +2,8 @@ import styled from "react-emotion";
 
 const GoButton = styled("button")`
   max-width: 100px;
-  color: #0984e3;
-  background: white;
+  background: #353740;
+  color: white;
   border: 1px solid;
   border-radius: 4px;
   font-size: 1.1em;
@@ -14,8 +14,8 @@ const GoButton = styled("button")`
     outline: 0 !important;
   }
   &:hover {
-    background: #0984e3;
-    color: white;
+    color: black;
+    background: white;
   }
 `;
 export default GoButton;

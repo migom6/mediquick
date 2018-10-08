@@ -1,5 +1,5 @@
 export const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" }
+  { value: "chocolate", label: "fever" },
+  { value: "strawberry", label: "stroke" },
+  { value: "vanilla", label: "back pain" }
 ];

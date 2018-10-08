@@ -22,7 +22,7 @@ const styled1 = css`
   display: inline-block;
   width: 60px;
   height: 34px;
-  border: solid 1px #0984e3;
+  border: solid 1px black;
   border-radius: 34px;
   .input {
     display: none;
@@ -69,7 +69,7 @@ const styled2 = css`
   display: inline-block;
   width: 60px;
   height: 34px;
-  border: solid 1px #0984e3;
+  border: solid 1px black;
   border-radius: 34px;
   .input {
     z-index: 22;
@@ -103,7 +103,7 @@ const styled2 = css`
   }
 
   .input + .slider {
-    background-color: #2196f3;
+    background-color: #353740;
   }
 
   .input + .slider:before {

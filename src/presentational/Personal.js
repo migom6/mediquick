@@ -20,7 +20,6 @@ export default class Personal extends Component {
           </option>
           <option>Female</option>
           <option>Male</option>
-          <option>Others</option>
         </select>
       </div>
     );
@@ -28,13 +27,16 @@ export default class Personal extends Component {
 }
 
 const global = css`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   margin: 28px 0px 16px 0px;
   input {
     margin: 0px 40px 0px 0px;
     font-size: 1.2em;
     padding: 8px 10px;
     border-radius: 4px;
-    border: 2px solid #0984e3;
+    border: 2px solid black;
     background-image: none;
     background-color: transparent;
     -webkit-box-shadow: none;
@@ -58,7 +60,7 @@ const global = css`
     appearance: none;
     padding: 8px 10px;
     border-radius: 4px;
-    border: 2px solid #0984e3;
+    border: 2px solid black;
     background-image: none;
     background-color: transparent;
     -webkit-box-shadow: none;

@@ -37,13 +37,12 @@ const styled = css`
   max-width: 560px;
   border-radius: 4px;
   min-height: 56px;
-  border: 2px solid #0984e3;
+  border: 2px solid black;
   font-size: 1.2em;
   padding-left: 8px;
   ::-webkit-input-placeholder {
     /* WebKit browsers */
     color: hsl(0, 0%, 50);
-    top: 50%;
   }
   &:focus {
     outline: 5px;

@@ -38,11 +38,12 @@ const styled = css`
   width: 100%;
   max-width: 560px;
   border-radius: 4px;
-  border-color: #0984e3;
+  border-color: black;
   .react-select__control {
     border-radius: 4px;
+    border: 2px solid black;
     min-height: 56px;
-    border-color: #0984e3;
+    border-color: black;
   }
   .react-select__value-container {
   }
@@ -66,7 +67,7 @@ const styled = css`
     font-size: 1.2em;
   }
   .react-select__dropdown-indicator .react-select__indicator-separator {
-    border-color: #0984e3;
-    backgroundcolor: #0984e3;
+    border-color: black;
+    backgroundcolor: black;
   }
 `;
