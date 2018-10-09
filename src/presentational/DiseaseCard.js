@@ -1,111 +1,65 @@
-import React from "react";
+import React, { Component } from "react";
+import styled from "react-emotion";
 import { css } from "emotion";
+import { Link } from "react-router-dom";
 
-export default function LoadingCard(props) {
-  return (
-    <div className={loading}>
-      <div class="lds-default">
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-      </div>
-    </div>
-  );
+export default class DiseaseCard extends Component {
+  render() {
+    let prof_name = this.props.info.prof_name;
+    let common_name = this.props.info.common_name;
+    let accuracy = this.props.info.accuracy;
+    let gradient = this.props.gradient;
+    return (
+      <Stylediv
+        to="/details"
+        onClick={this.goMedicare}
+        className={style}
+        gradient={gradient}
+      >
+        <span className="prof">{prof_name}</span>
+        <span>{common_name}</span>
+        <span>Accuracy: {accuracy}</span>
+      </Stylediv>
+    );
+  }
 }
-
-const loading = css`
-  .lds-default {
-    display: inline-block;
-    position: relative;
-    width: 64px;
-    height: 64px;
+const style = css`
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    -ms-transform: scale(1.3, 1.3); /* IE 9 */
+    -webkit-transform: scale(1.3, 1.3); /* Safari */
+    transform: scale(1.3, 1.3);
   }
-  .lds-default div {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: #fff;
-    border-radius: 50%;
-    animation: lds-default 1.2s linear infinite;
+  span {
+    margin-bottom: 4px;
   }
-  .lds-default div:nth-child(1) {
-    animation-delay: 0s;
-    top: 29px;
-    left: 53px;
+  .prof {
+    font-size: 1.5em;
   }
-  .lds-default div:nth-child(2) {
-    animation-delay: -0.1s;
-    top: 18px;
-    left: 50px;
+  text-decoration: none;
+  &:visited {
+    text-decoration: none;
   }
-  .lds-default div:nth-child(3) {
-    animation-delay: -0.2s;
-    top: 9px;
-    left: 41px;
+  &:hover {
+    text-decoration: none;
   }
-  .lds-default div:nth-child(4) {
-    animation-delay: -0.3s;
-    top: 6px;
-    left: 29px;
-  }
-  .lds-default div:nth-child(5) {
-    animation-delay: -0.4s;
-    top: 9px;
-    left: 18px;
-  }
-  .lds-default div:nth-child(6) {
-    animation-delay: -0.5s;
-    top: 18px;
-    left: 9px;
-  }
-  .lds-default div:nth-child(7) {
-    animation-delay: -0.6s;
-    top: 29px;
-    left: 6px;
-  }
-  .lds-default div:nth-child(8) {
-    animation-delay: -0.7s;
-    top: 41px;
-    left: 9px;
-  }
-  .lds-default div:nth-child(9) {
-    animation-delay: -0.8s;
-    top: 50px;
-    left: 18px;
-  }
-  .lds-default div:nth-child(10) {
-    animation-delay: -0.9s;
-    top: 53px;
-    left: 29px;
-  }
-  .lds-default div:nth-child(11) {
-    animation-delay: -1s;
-    top: 50px;
-    left: 41px;
-  }
-  .lds-default div:nth-child(12) {
-    animation-delay: -1.1s;
-    top: 41px;
-    left: 50px;
-  }
-  @keyframes lds-default {
-    0%,
-    20%,
-    80%,
-    100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.5);
-    }
+  &:active {
+    text-decoration: none;
   }
 `;
+const Stylediv = styled(Link)(props => ({
+  padding: "16px",
+  marginLeft: "16px",
+  marginBottom: "16px",
+  width: "25%",
+  color: "white",
+  display: "flex",
+  background: `linear-gradient(${props.gradient})`,
+  flexDirection: "column",
+  alignItems: "center",
+  border: "1px solid white",
+  borderRadius: "8px",
+  fontWeight: "bold",
+  cursor: "pointer",
+  boxShadow: "1px 1px #fff"
+}));

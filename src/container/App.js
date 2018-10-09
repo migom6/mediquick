@@ -1,10 +1,7 @@
-import React, { Component } from "react";
-import SearchBox from "./SearchBox";
-import Header from "../presentational/Header";
-import GoButton from "../presentational/GoButton";
-import Personal from "../presentational/Personal";
-import Diagnosis from "./Diagnosis";
-import { css } from "emotion";
+import React, { Component, Fragment } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./Home";
+import Medicare from "./Medicare";
 
 class App extends Component {
   constructor(props) {
@@ -13,30 +10,16 @@ class App extends Component {
   }
   render() {
     return (
-      <div className={styled}>
-        <Header />
-        <Personal />
-        <SearchBox />
-        <GoButton>Search</GoButton>
-        <Diagnosis />
-      </div>
+      <Router>
+        <Fragment>
+          <Route exact path="/" component={Home} />
+          <Route
+            path="/details"
+            render={props => <Medicare {...props} info={"haha"} />}
+          />
+        </Fragment>
+      </Router>
     );
   }
 }
-
-const styled = css`
-  display: flex;
-  flex-direction: column;
-  padding-top: 40;
-  padding-left: 20%;
-  padding-right: 20%;
-  font-family: 'Heebo', sans-serif;
-  @media (min-width: 320px) and (max-width: 480px) {
-      padding-left: 0%;
-      padding-right: 0%;
-    }
-  }
-
-`;
-
 export default App;

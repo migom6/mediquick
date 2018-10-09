@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { css } from "emotion";
-import DiseaseCard from "../presentational/DiseaseCard";
+import Diseases from "./Diseases";
 import LoadingCard from "../presentational/LoadingCard";
 
 export default class Diagnosis extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
+      isLoading: false,
       diseases: ["fever", "back pain", "dyxlesia"]
     };
   }
@@ -27,7 +27,7 @@ export default class Diagnosis extends Component {
         <span className="searching">
           {`${temp} diagnosis for ${this.concatDisease()} ...`}
         </span>
-        {!this.state.isLoading ? <DiseaseCard /> : <LoadingCard />}
+        {!this.state.isLoading ? <Diseases /> : <LoadingCard />}
       </div>
     );
   }
@@ -36,8 +36,11 @@ export default class Diagnosis extends Component {
 const styled = css`
   margin-top: 50px;
   display: flex;
+  display: flex;
+  flex-direction: column;
   .searching {
     color: rgb(53, 55, 64, 0.6);
+    font-style: italic;
   }
   .loading {
   }
