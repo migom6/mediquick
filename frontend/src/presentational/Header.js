@@ -4,7 +4,9 @@ import { css } from "emotion";
 const Header = props => {
   return (
     <div className={header}>
-      <span className="left">MediQuick</span>
+      <a href="/" className="left">
+        MediQuick
+      </a>
       <span className="right">
         <a href="www.google.com" className="help">
           Help
@@ -55,6 +57,9 @@ const header = css`
   .left {
     font-size: 2em;
     font-weight: bold;
+    &:link {
+      text-decoration: none;
+    }
   }
   .help {
     margin: 0px 12px;

@@ -15,7 +15,13 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route
             path="/details"
-            render={props => <Medicare {...props} disease={"aids"} />}
+            render={props => (
+              <Medicare
+                {...props}
+                personal={{ name: "Raghav Tayal", age: 21, sex: "Male" }}
+                disease={"typhoid"}
+              />
+            )}
           />
         </Fragment>
       </Router>

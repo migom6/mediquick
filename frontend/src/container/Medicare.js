@@ -30,7 +30,7 @@ export default class Diseases extends Component {
       return (
         <div className={styled}>
           <Header />
-          <p>{`Loading Data for ${disease}...`}</p>
+          <p>{`Loading data for ${disease}...`}</p>
           <LoadingCard />
         </div>
       );
@@ -38,7 +38,7 @@ export default class Diseases extends Component {
     return (
       <div className={styled}>
         <Header />
-        <MedicalCare info={this.state.info} />
+        <MedicalCare personal={this.props.personal} info={this.state.info} />
       </div>
     );
   }
