@@ -16,6 +16,9 @@ const loadOptions = (inputValue, callback) => {
 };
 
 export default class ListSearchBox extends Component {
+  handleInputChange = values => {
+    console.log(values);
+  };
   render() {
     return (
       <AsyncSelect
@@ -27,7 +30,7 @@ export default class ListSearchBox extends Component {
         components={makeAnimated()}
         loadOptions={loadOptions}
         defaultOptions
-        onInputChange={this.handleInputChange}
+        onChange={this.handleInputChange}
         placeholder="What are your symptoms?"
       />
     );

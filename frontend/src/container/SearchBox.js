@@ -14,7 +14,7 @@ export default class SearchBox extends Component {
   }
   toggle = () => {
     this.setState({ toggle: !this.state.toggle });
-    console.log(this.state);
+    console.log(this.state.toggle);
   };
   render() {
     return (

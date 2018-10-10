@@ -20,6 +20,7 @@ export default class AutoSearchBox extends Component {
   }
 
   render() {
+    console.log(this.state.value);
     return (
       <input
         className={styled}

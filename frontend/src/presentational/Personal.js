@@ -8,13 +8,32 @@ export default class Personal extends Component {
       toggle: false
     };
   }
+  changeAge = e => {
+    console.log(e.target.value);
+  };
+  changeName = e => {
+    console.log(e.target.value);
+  };
+  changeGender = e => {
+    console.log(e.target.value);
+  };
 
   render() {
     return (
       <div className={global}>
-        <input placeholder="What's your name?" className="name" type="text" />
-        <input placeholder="Age" type="number" className="age" />
-        <select>
+        <input
+          onChange={this.changeName}
+          placeholder="What's your name?"
+          className="name"
+          type="text"
+        />
+        <input
+          onChange={this.changeAge}
+          placeholder="Age"
+          type="number"
+          className="age"
+        />
+        <select onChange={this.changeGender}>
           <option className="placeholder" value="" disabled selected>
             Gender
           </option>
