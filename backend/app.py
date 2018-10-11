@@ -65,24 +65,26 @@ def get_all_diagnosis():
 @app.route('/results/')
 def getResults():
     disease = request.args.get("disease")
-    if(dbconnected):
-        query = db.Treatments.find_one({"disease": disease})
-        del query["_id"] #needed to remove mongodb defauld ObjectID key, because it can't be serialised
-        if(query is None):
-            print("Fetching results via scraping for "+disease)
-            res = getdetails_disease(driver, disease)
-            print(res)
-            print("Showing results via scraping for "+disease)
-            db.Treatments.insert_one(res)
-            print("Saved in database")
-            return jsonify(results=res)
+    try:
+        if(dbconnected):
+            query = db.Treatments.find_one({"disease": disease})
+            del query["_id"] #needed to remove mongodb defauld ObjectID key, because it can't be serialised
+            if(query is None):
+                print("Fetching results via scraping for "+disease)
+                res = getdetails_disease(driver, disease)
+                print("Showing results via scraping for "+disease)
+                db.Treatments.insert_one(res)
+                print("Saved in database")
+                return jsonify(results=res)
+            else:
+                print("Showing results from database")
+                return jsonify(results=query)
         else:
-            print("Showing results from database")
-            return jsonify(results=query)
-    else:
-        print("Showing results via scraping for "+disease)
-        res = getdetails_disease(driver, disease)
-        return jsonify(results=res)
+            print("Showing results via scraping for "+disease)
+            res = getdetails_disease(driver, disease)
+            return jsonify(results=res)
+    except:
+        return "Some bad thing happened", 400
   
 @app.route('/alive')
 def hello():
