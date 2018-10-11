@@ -1,10 +1,6 @@
-// export function CreateTodo(todo) {
-//   return (dispatch, getState) => {
-//     return TodoApi.createTodo(todo).then(res => {
-//       dispatch(CreateTodoSuccess(res.data.data));
-//     });
-//   };
-// }
+import { func } from "prop-types";
+
+const axios = require("axios");
 
 export function set_gender(gender) {
   return {
@@ -25,48 +21,71 @@ export function set_name(name) {
     name
   };
 }
-export function set_symptoms(symptoms) {
-  return {
-    type: "SET_SYMPTOMS",
-    symptoms
-  };
-}
-export function set_diagnosis(diagnosis) {
-  return {
-    type: "SET_DIAGNOSIS",
-    diagnosis
-  };
-}
+
 export function set_toggle(toggle) {
   return {
     type: "SET_TOGGLE",
     toggle
   };
 }
-// export function get_symptoms() {
-//   return (dispatch, getState) => {
+export function set_issues(issues) {
+  return {
+    type: "SET_ISSUES",
+    issues
+  };
+}
+export function set_symptoms() {
+  return (dispatch, getState) => {
+    axios
+      .get("http://139.59.27.218:5000/symptoms")
+      .then(function(response) {
+        dispatch(fetch_success_symptoms(response.data.results));
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
+}
 
-//     dispatch({
-//       type: "GET_SYMPTOMS",
-//       todo
-//     });
-//     TodoApi.updateTodo(todo).then(res => {
-//       dispatch(UpdateTodoSuccess(res.data.data));
-//     });
-//   };
-// }
+export function fetch_success_symptoms(symptoms) {
+  return {
+    type: "SET_SYMPTOMS",
+    symptoms
+  };
+}
 
-// //Delete
-// export function DeleteTodo(todo) {
-//   return (dispatch, getState) => {
-//     dispatch({
-//       type: DELETE_TODO,
-//       todo
-//     });
-//     TodoApi.removeTodo(todo).then(res => {
-//       if (res.status == 204) {
-//         dispatch(DeleteTodoSuccess(todo));
-//       }
-//     });
-//   };
-// }
+export function set_diagnosis() {
+  return (dispatch, getState) => {
+    let presentState = getState();
+    let { issues, age, gender } = presentState.medic;
+    let symptoms = [];
+    for (let i = 0; i < issues.length; i++) {
+      symptoms.push(issues[i].value);
+    }
+    symptoms = symptoms + "";
+    symptoms = "[" + symptoms + "]";
+    let year_of_birth = new Date().getFullYear() - age;
+    let body = {
+      params: {
+        symptoms: symptoms,
+        year_of_birth,
+        gender
+      }
+    };
+    axios
+      .get("http://139.59.27.218:5000/diagnosis", body)
+      .then(function(response) {
+        dispatch(fetch_success_diagnosis(response.data.results));
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
+}
+
+function fetch_success_diagnosis(diagnosis) {
+  return {
+    type: "SET_DIAGNOSIS",
+    diagnosis
+  };
+}

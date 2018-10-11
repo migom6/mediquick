@@ -4,8 +4,9 @@ let initialState = {
   gender: false,
   symptoms: [],
   diagnosis: [],
-  toggle: false,
-  disease: "malaria"
+  toggle: true,
+  disease: "",
+  issues: []
 };
 export default function medicReducer(state = initialState, action) {
   switch (action.type) {
@@ -20,7 +21,9 @@ export default function medicReducer(state = initialState, action) {
     case "SET_DIAGNOSIS":
       return { ...state, diagnosis: action.diagnosis };
     case "SET_TOGGLE":
-      return { ...state, diagnosis: action.toggle };
+      return { ...state, toggle: action.toggle };
+    case "SET_ISSUES":
+      return { ...state, issues: action.issues };
     default:
       return state;
   }

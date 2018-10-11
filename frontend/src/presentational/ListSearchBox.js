@@ -1,34 +1,37 @@
 import React, { Component } from "react";
 import makeAnimated from "react-select/lib/animated";
-import AsyncSelect from "react-select/lib/Async";
-import { options as colourOptions } from "./data";
+import Select from "react-select";
 import { css } from "emotion";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const filterColors = inputValue =>
-  colourOptions.filter(i =>
-    i.label.toLowerCase().includes(inputValue.toLowerCase())
-  );
+import { set_issues } from "../redux/medicActions";
 
-const loadOptions = (inputValue, callback) => {
-  setTimeout(() => {
-    callback(filterColors(inputValue));
-  }, 10);
-};
-
-export default class ListSearchBox extends Component {
+class ListSearchBox extends Component {
+  loadOptions = () => {
+    const { symptoms } = this.props.medic;
+    let symp = [];
+    for (let i = 0; i < symptoms.length; i++) {
+      let k = {};
+      k.label = symptoms[i].Name;
+      k.value = symptoms[i].ID;
+      symp.push(k);
+    }
+    return symp;
+  };
   handleInputChange = values => {
-    console.log(values);
+    this.props.setIssues(values);
   };
   render() {
     return (
-      <AsyncSelect
+      <Select
         className={`react-select-container ${styled}`}
         classNamePrefix="react-select"
         autoFocus
         isMulti
         cacheOptions
         components={makeAnimated()}
-        loadOptions={loadOptions}
+        options={this.loadOptions()}
         defaultOptions
         onChange={this.handleInputChange}
         placeholder="What are your symptoms?"
@@ -36,6 +39,26 @@ export default class ListSearchBox extends Component {
     );
   }
 }
+
+const mapStatetoProps = (state, props) => {
+  return {
+    medic: state.medic,
+    ...props
+  };
+};
+const mapActionstoProps = (dispatch, props) => {
+  return bindActionCreators(
+    {
+      setIssues: set_issues
+    },
+    dispatch
+  );
+};
+
+export default connect(
+  mapStatetoProps,
+  mapActionstoProps
+)(ListSearchBox);
 
 const styled = css`
   width: 100%;
@@ -61,7 +84,7 @@ const styled = css`
     justify-content: center;
     align-items: center;
     margin: 2px 12px 2px 12px;
-    font-size: 1.2em;
+    font-size: 1em;
   }
   .react-select__multi-value__remove {
     border-radius: 0 4px 4px 0;

@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { css } from "emotion";
 
-export default class AutoSearchBox extends Component {
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
+class AutoSearchBox extends Component {
   constructor(props) {
     super(props);
     this.state = { value: "" };
@@ -32,6 +35,21 @@ export default class AutoSearchBox extends Component {
     );
   }
 }
+
+const mapStatetoProps = (state, props) => {
+  return {
+    medic: state.medic,
+    ...props
+  };
+};
+const mapActionstoProps = (dispatch, props) => {
+  return bindActionCreators({}, dispatch);
+};
+
+export default connect(
+  mapStatetoProps,
+  mapActionstoProps
+)(AutoSearchBox);
 
 const styled = css`
   width: 100%;

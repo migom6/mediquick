@@ -6,23 +6,49 @@ import Personal from "../presentational/Personal";
 import Diagnosis from "./Diagnosis";
 import { css } from "emotion";
 
-export default class Home extends Component {
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { set_diagnosis } from "../redux/medicActions";
+
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = { toggle: false };
   }
+  onClick = () => {
+    this.props.getDiagnosis();
+  };
   render() {
     return (
       <div className={styled}>
         <Header />
         <Personal />
         <SearchBox />
-        <GoButton>Search</GoButton>
+        <GoButton onClick={this.onClick}>Search</GoButton>
         <Diagnosis />
       </div>
     );
   }
 }
+
+const mapStatetoProps = (state, props) => {
+  return {
+    medic: state.medic,
+    ...props
+  };
+};
+const mapActionstoProps = (dispatch, props) => {
+  return bindActionCreators(
+    {
+      getDiagnosis: set_diagnosis
+    },
+    dispatch
+  );
+};
+export default connect(
+  mapStatetoProps,
+  mapActionstoProps
+)(Home);
 
 const styled = css`
   display: flex;
