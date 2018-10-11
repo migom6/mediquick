@@ -1,9 +1,0 @@
-<script src="a.js"></script>
-<script src="b.js"></script>
-<script>
-  var uri = "https://authservice.priaid.ch/login";
-  var secret_key = "Lt7x8E9Sod2T4Hfs3";
-  var computedHash = CryptoJS.HmacMD5(uri, secret_key);
-  var computedHashString = computedHash.toString(CryptoJS.enc.Base64);
-  console.log(computedHashString)     
-</script>
