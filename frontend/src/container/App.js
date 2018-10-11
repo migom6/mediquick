@@ -19,7 +19,7 @@ class App extends Component {
               <Medicare
                 {...props}
                 personal={{ name: "Raghav Tayal", age: 21, sex: "Male" }}
-                disease={"typhoid"}
+                disease={"malaria"}
               />
             )}
           />
