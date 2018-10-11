@@ -7,8 +7,9 @@ export default class Diseases extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      info: [],
-      error: false
+      result: {},
+      error: false,
+      isLoading: true
     };
   }
 
@@ -17,20 +18,19 @@ export default class Diseases extends Component {
   }
 
   fetchdata = disease => {
-    console.log(disease);
-    fetch(`http://139.59.27.218:5000/results/${disease}`)
+    fetch(`http://139.59.27.218:5000/results/?disease=${disease}`)
       .then(response => response.json())
-      .then(data => this.setState({ info: data.results }))
+      .then(data => this.setState({ result: data.result, isLoading: false }))
       .catch(e => this.setState({ error: true }));
   };
 
   render() {
-    const { info, error } = this.state;
-    const { disease } = this.props;
+    const { result, error, isLoading } = this.state;
+    const { disease, personal } = this.props;
     if (error === true) {
-      return <div>No results found</div>;
+      return <div>No result found</div>;
     }
-    if (info.length === 0) {
+    if (isLoading === true) {
       return (
         <div className={styled}>
           <Header />
@@ -42,7 +42,7 @@ export default class Diseases extends Component {
     return (
       <div className={styled}>
         <Header />
-        <MedicalCare personal={this.props.personal} info={this.state.info} />
+        <MedicalCare personal={personal} result={result} />
       </div>
     );
   }

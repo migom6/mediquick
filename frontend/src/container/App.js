@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./Home";
 import Medicare from "./Medicare";
+import { connect } from "react-redux";
 
 class App extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class App extends Component {
     this.state = { toggle: false };
   }
   render() {
+    const { name, age, gender, disease } = this.props.medic;
     return (
       <Router>
         <Fragment>
@@ -18,8 +20,8 @@ class App extends Component {
             render={props => (
               <Medicare
                 {...props}
-                personal={{ name: "Raghav Tayal", age: 21, sex: "Male" }}
-                disease={"malaria"}
+                personal={{ name, age, sex: gender }}
+                disease={disease}
               />
             )}
           />
@@ -28,4 +30,17 @@ class App extends Component {
     );
   }
 }
-export default App;
+
+const mapStatetoProps = (state, props) => {
+  return {
+    medic: state.medic,
+    ...props
+  };
+};
+const mapActionstoProps = (dispatch, props) => {
+  return {};
+};
+export default connect(
+  mapStatetoProps,
+  mapActionstoProps
+)(App);

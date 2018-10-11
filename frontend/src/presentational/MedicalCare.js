@@ -3,18 +3,23 @@ import styled from "react-emotion";
 import { css } from "emotion";
 
 export default class MedicalCare extends Component {
-  renderCards = () =>
-    this.props.info.map((element, index) => {
-      let lines = element.split("\n");
-      return lines.map((e, i) => {
-        if (i === 0) return <Heading>{e}</Heading>;
-        else {
-          if (i % 2 === 1) return <SubHeading>{e}</SubHeading>;
-          else return <Text>{e}</Text>;
-        }
-      });
-    });
+  renderOptions = options =>
+    options.map(option => (
+      <div>
+        <h2>{option.title}</h2>
+        <span>{option.description}</span>
+      </div>
+    ));
+  renderCards = treatment_types =>
+    treatment_types.map(elem => (
+      <div>
+        <h1>{elem.type}</h1>
+        {this.renderOptions(elem.options)}
+      </div>
+    ));
   render() {
+    const { result } = this.props;
+    const { disease, treatment_types } = result;
     return (
       <div className={box}>
         <Title>Medical Report</Title>
@@ -26,7 +31,11 @@ export default class MedicalCare extends Component {
           <span className="lbl">Age:</span>
           <span className="lbl inf">{this.props.personal.age}</span>
         </div>
-        {this.renderCards()}
+        <div>
+          <span className="lbl">Diagnosed:</span>
+          <span className="lbl inf">{disease}</span>
+        </div>
+        {this.renderCards(treatment_types)}
       </div>
     );
   }

@@ -1,21 +1,28 @@
 import React, { Component } from "react";
 import { css } from "emotion";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-export default class Personal extends Component {
+import { set_gender, set_age, set_name } from "../redux/medicActions";
+
+class Personal extends Component {
   constructor(props) {
     super(props);
     this.state = {
       toggle: false
     };
+    this.onChangeGender = this.props.onChangeGender.bind(this);
+    this.onChangeAge = this.props.onChangeAge.bind(this);
+    this.onChangeName = this.props.onChangeName.bind(this);
   }
   changeAge = e => {
-    console.log(e.target.value);
+    this.onChangeAge(e.target.value);
   };
   changeName = e => {
-    console.log(e.target.value);
+    this.onChangeName(e.target.value);
   };
   changeGender = e => {
-    console.log(e.target.value);
+    this.onChangeGender(e.target.value);
   };
 
   render() {
@@ -37,13 +44,35 @@ export default class Personal extends Component {
           <option className="placeholder" value="" disabled selected>
             Gender
           </option>
-          <option>Female</option>
-          <option>Male</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
         </select>
       </div>
     );
   }
 }
+
+const mapStatetoProps = (state, props) => {
+  return {
+    medic: state.medic,
+    ...props
+  };
+};
+const mapActionstoProps = (dispatch, props) => {
+  return bindActionCreators(
+    {
+      onChangeGender: set_gender,
+      onChangeAge: set_age,
+      onChangeName: set_name
+    },
+    dispatch
+  );
+};
+
+export default connect(
+  mapStatetoProps,
+  mapActionstoProps
+)(Personal);
 
 const global = css`
   display: flex;

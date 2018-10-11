@@ -5,16 +5,21 @@ import ListSearchBox from "../presentational/ListSearchBox";
 import AutoSearchBox from "../presentational/AutoSearchBox";
 import Toggle from "../presentational/Toggle";
 
-export default class SearchBox extends Component {
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { set_toggle } from "../redux/medicActions";
+
+class SearchBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
       toggle: false
     };
+    this.onChangeToggle = this.props.onChangeToggle.bind(this);
   }
   toggle = () => {
+    this.onChangeToggle(!this.state.toggle);
     this.setState({ toggle: !this.state.toggle });
-    console.log(this.state.toggle);
   };
   render() {
     return (
@@ -25,6 +30,26 @@ export default class SearchBox extends Component {
     );
   }
 }
+
+const mapStatetoProps = (state, props) => {
+  return {
+    medic: state.medic,
+    ...props
+  };
+};
+const mapActionstoProps = (dispatch, props) => {
+  return bindActionCreators(
+    {
+      onChangeToggle: set_toggle
+    },
+    dispatch
+  );
+};
+
+export default connect(
+  mapStatetoProps,
+  mapActionstoProps
+)(SearchBox);
 
 const styles = css`
   display: flex;

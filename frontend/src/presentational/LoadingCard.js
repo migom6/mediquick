@@ -4,7 +4,7 @@ import { css } from "emotion";
 export default function LoadingCard(props) {
   return (
     <div className={loading}>
-      <div class="lds-default">
+      <div className="lds-default">
         <div />
         <div />
         <div />
