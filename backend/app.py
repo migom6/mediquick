@@ -84,8 +84,6 @@ def getResults():
         res = getdetails_disease(driver, disease)
         return jsonify(results=res)
   
-    
-     
 @app.route('/alive')
 def hello():
     return "Alive!!!"
@@ -94,8 +92,6 @@ def hello():
 def quitfirefox():
     driver.quit()
     return("successfully quit gecko")
-
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
