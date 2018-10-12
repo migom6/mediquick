@@ -42,6 +42,10 @@ class Personal extends Component {
           className="age"
         />
         <select onChange={this.changeGender} placeholder="Gender">
+          <option disabled selected value="">
+            Gender
+          </option>
+
           <option value="female">Female</option>
           <option value="male">Male</option>
         </select>
