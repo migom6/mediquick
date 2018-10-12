@@ -3,7 +3,15 @@ import styled from "react-emotion";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
 
-export default class DiseaseCard extends Component {
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { set_disease } from "../redux/medicActions";
+
+class DiseaseCard extends Component {
+  goMedicare = () => {
+    console.log(this.props.info.prof_name);
+    this.props.setDisease(this.props.info.prof_name);
+  };
   render() {
     let prof_name = this.props.info.prof_name;
     let common_name = this.props.info.common_name;
@@ -23,6 +31,26 @@ export default class DiseaseCard extends Component {
     );
   }
 }
+
+const mapStatetoProps = (state, props) => {
+  return {
+    medic: state.medic,
+    ...props
+  };
+};
+const mapActionstoProps = (dispatch, props) => {
+  return bindActionCreators(
+    {
+      setDisease: set_disease
+    },
+    dispatch
+  );
+};
+export default connect(
+  mapStatetoProps,
+  mapActionstoProps
+)(DiseaseCard);
+
 const style = css`
   transition: all 0.2s ease-in-out;
   &:hover {
@@ -48,7 +76,7 @@ const style = css`
   }
 `;
 const Stylediv = styled(Link)(props => ({
-  padding: "16px",
+  padding: "20px",
   marginLeft: "16px",
   marginBottom: "16px",
   width: "25%",

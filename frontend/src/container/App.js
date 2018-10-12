@@ -26,8 +26,8 @@ class App extends Component {
             render={props => (
               <Medicare
                 {...props}
-                personal={{ name, age, sex: gender }}
                 disease={disease}
+                personal={{ name, age, sex: gender }}
               />
             )}
           />

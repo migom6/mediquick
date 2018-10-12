@@ -7,28 +7,28 @@ export default class Diseases extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      info: [1, 2, 3, 4],
       colors: colors //random colors
     };
   }
 
-  renderCards = () =>
-    this.state.info.map((value, index) => {
+  renderCards = diagnosis =>
+    diagnosis.map((value, index) => {
       return (
         <DiseaseCard
           key={index}
           gradient={this.state.colors[index]}
           info={{
-            prof_name: "Anxiety disorder",
-            common_name: "Excessive feeling of fear",
-            accuracy: 90
+            prof_name: value.Issue.ProfName,
+            common_name: value.Issue.Name,
+            accuracy: value.Issue.Accuracy
           }}
         />
       );
     });
 
   render() {
-    return <div className={styled}>{this.renderCards()}</div>;
+    const { diagnosis } = this.props;
+    return <div className={styled}>{this.renderCards(diagnosis)}</div>;
   }
 }
 

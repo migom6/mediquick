@@ -3,7 +3,7 @@ let initialState = {
   age: 0,
   gender: false,
   symptoms: [],
-  diagnosis: [],
+  diagnosis: false,
   toggle: true,
   disease: "",
   issues: []
@@ -20,6 +20,8 @@ export default function medicReducer(state = initialState, action) {
       return { ...state, symptoms: action.symptoms };
     case "SET_DIAGNOSIS":
       return { ...state, diagnosis: action.diagnosis };
+    case "SET_DISEASE":
+      return { ...state, disease: action.disease };
     case "SET_TOGGLE":
       return { ...state, toggle: action.toggle };
     case "SET_ISSUES":

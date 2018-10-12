@@ -22,6 +22,7 @@ class Personal extends Component {
     this.onChangeName(e.target.value);
   };
   changeGender = e => {
+    e.preventDefault();
     this.onChangeGender(e.target.value);
   };
 
@@ -40,10 +41,7 @@ class Personal extends Component {
           type="number"
           className="age"
         />
-        <select onChange={this.changeGender}>
-          <option className="placeholder" value="" disabled selected>
-            Gender
-          </option>
+        <select onChange={this.changeGender} placeholder="Gender">
           <option value="female">Female</option>
           <option value="male">Male</option>
         </select>

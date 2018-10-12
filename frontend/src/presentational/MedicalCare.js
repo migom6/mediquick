@@ -4,19 +4,21 @@ import { css } from "emotion";
 
 export default class MedicalCare extends Component {
   renderOptions = options =>
-    options.map(option => (
-      <div>
+    options.map((option, j) => (
+      <div key={j}>
         <h2>{option.title}</h2>
         <span>{option.description}</span>
       </div>
     ));
   renderCards = treatment_types =>
-    treatment_types.map(elem => (
-      <div>
-        <h1>{elem.type}</h1>
-        {this.renderOptions(elem.options)}
-      </div>
-    ));
+    treatment_types.map((elem, i) => {
+      return (
+        <div key={i}>
+          <h1>{elem.type}</h1>
+          {this.renderOptions(elem.options)}
+        </div>
+      );
+    });
   render() {
     const { result } = this.props;
     const { disease, treatment_types } = result;

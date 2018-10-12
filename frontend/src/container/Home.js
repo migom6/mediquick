@@ -19,13 +19,17 @@ class Home extends Component {
     this.props.getDiagnosis();
   };
   render() {
+    if (this.props.medic.symptoms === "Invalid token") {
+      return <h1>Token Error, API limits exceeded</h1>;
+    }
+    const { diagnosis, issues, age } = this.props.medic;
     return (
       <div className={styled}>
         <Header />
         <Personal />
         <SearchBox />
         <GoButton onClick={this.onClick}>Search</GoButton>
-        <Diagnosis />
+        <Diagnosis issues={issues} age={age} diagnosis={diagnosis} />
       </div>
     );
   }

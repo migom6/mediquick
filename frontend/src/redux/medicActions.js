@@ -1,5 +1,3 @@
-import { func } from "prop-types";
-
 const axios = require("axios");
 
 export function set_gender(gender) {
@@ -34,6 +32,14 @@ export function set_issues(issues) {
     issues
   };
 }
+
+export function set_disease(disease) {
+  return {
+    type: "SET_DISEASE",
+    disease
+  };
+}
+
 export function set_symptoms() {
   return (dispatch, getState) => {
     axios
