@@ -3,12 +3,11 @@
 ### Table Of Content
 
 1. [Goal](#vision--mission)
-1. [MediQuick Features](#memex-features)
+1. [MediQuick Features](#mediquick-features)
 1. [Dependencies and Technologies Used](#dependency)
 1. [Project Status](#project-status)
     1. [Roadmap](#roadmap)
 1. [Contact](#contact)
-1. [License + Privacy Policy](#license--privacy-policy)
 
 
 ## Goal
@@ -20,7 +19,7 @@
 ## MedicQuick' Features
 MedicQuick is an web app, which is use to suggest users possible treatments from user input information. 
 
-![](https://worldbrain.io/wp-content/uploads/2018/09/Combo4.png)
+![](https://github.com/migom6/mediquick/blob/master/assets/main.png)
 
  - **Full-Text-Search:** Search with every word of all websites & PDFs you visited. Up to 5 years of your personal web-research locally and in the browser. ([60s Tutorial](https://www.youtube.com/watch?v=GwOMrTh_q9M))
  - **Associative filtering:** Remember only visit time, domain or custom tags?**
