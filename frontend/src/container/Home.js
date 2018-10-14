@@ -3,6 +3,7 @@ import SearchBox from "./SearchBox";
 import Header from "../presentational/Header";
 import GoButton from "../presentational/GoButton";
 import Personal from "../presentational/Personal";
+import ShowMoreDetails from "../presentational/ShowMoreDetails";
 import Diagnosis from "./Diagnosis";
 import { css } from "emotion";
 
@@ -22,14 +23,20 @@ class Home extends Component {
     if (this.props.medic.symptoms === "Invalid token") {
       return <h1>Token Error, API limits exceeded</h1>;
     }
-    const { diagnosis, issues, age } = this.props.medic;
+    const { diagnosis, issues, age, toggle } = this.props.medic;
     return (
       <div className={styled}>
         <Header />
         <Personal />
         <SearchBox />
+        {!toggle ? <ShowMoreDetails /> : false}
         <GoButton onClick={this.onClick}>Search</GoButton>
-        <Diagnosis issues={issues} age={age} diagnosis={diagnosis} />
+        <Diagnosis
+          toggle={toggle}
+          issues={issues}
+          age={age}
+          diagnosis={diagnosis}
+        />
       </div>
     );
   }
@@ -66,5 +73,10 @@ const styled = css`
       padding-right: 0%;
     }
   }
-
+  .show {
+    text-decoration :underline;
+  }
+  .details {
+    text-decoration : none;
+  }
 `;

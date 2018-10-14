@@ -26,9 +26,15 @@ export default class Diagnosis extends Component {
     if (!diagnosis) {
       return (
         <h3 className={styled}>
-          <center className="info">
-            Toggle off the button to have Auto Search Box feature
-          </center>
+          {this.props.toggle ? (
+            <center className="info">
+              <span> Toggle off to describe your symptoms. </span>
+            </center>
+          ) : (
+            <center className="info">
+              <span> Toggle on to get list of symptoms. </span>
+            </center>
+          )}
         </h3>
       );
     }
@@ -63,13 +69,15 @@ const styled = css`
   display: flex;
   display: flex;
   flex-direction: column;
+  .sutle {
+    color: rgb(53, 55, 64, 0.6);
+  }
   .info {
     margin-top: 80px;
+    color: #16a085;
   }
   .searching {
     color: rgb(53, 55, 64, 0.6);
     font-style: italic;
-  }
-  .loading {
   }
 `;

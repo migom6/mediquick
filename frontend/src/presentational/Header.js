@@ -5,7 +5,8 @@ const Header = props => {
   return (
     <div className={header}>
       <a href="/" className="left">
-        MediQuick
+        <span className="Medi">Medi</span>
+        <span className="Quick">Quick</span>
       </a>
       <span className="right">
         <a href="www.google.com" className="help">
@@ -53,6 +54,12 @@ const header = css`
     display: -ms-flexbox;
     display: flex;
     margin-top: 8px;
+  }
+  .Medi {
+    color: #e74c3c;
+  }
+  .Quick {
+    color: black;
   }
   .left {
     font-size: 2em;

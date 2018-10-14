@@ -4,33 +4,37 @@ import { css } from "emotion";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
+import { set_issues } from "../redux/medicActions";
+import AutoSearch from "../utils/autoSearch";
+
 class AutoSearchBox extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      value: ""
+    };
   }
-
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  handleSubmit(event) {
-    alert("A name was submitted: " + this.state.value);
-    event.preventDefault();
-  }
-
+  handleChange = event => {
+    if (this.state.value.length > 4) {
+      let input_text = this.state.value.split(" ");
+      let symptoms = new AutoSearch(input_text, this.props.medic.symptoms);
+      let selected_symptoms = symptoms.predict();
+      this.props.setIssues(selected_symptoms);
+      this.setState({ details: true });
+    }
+  };
+  onChange = e => {
+    this.setState({ value: e.target.value });
+  };
   render() {
-    console.log(this.state.value);
     return (
       <input
         className={styled}
-        placeholder="What are your symptoms?"
+        placeholder="Write your symptoms? eg: I am having pack pain..."
         type="text"
         value={this.state.value}
-        onChange={this.handleChange}
+        onBlur={this.handleChange}
+        onChange={this.onChange}
       />
     );
   }
@@ -43,7 +47,12 @@ const mapStatetoProps = (state, props) => {
   };
 };
 const mapActionstoProps = (dispatch, props) => {
-  return bindActionCreators({}, dispatch);
+  return bindActionCreators(
+    {
+      setIssues: set_issues
+    },
+    dispatch
+  );
 };
 
 export default connect(

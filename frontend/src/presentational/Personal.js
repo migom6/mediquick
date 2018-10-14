@@ -42,10 +42,7 @@ class Personal extends Component {
           className="age"
         />
         <select onChange={this.changeGender} placeholder="Gender">
-          <option disabled selected value="">
-            Gender
-          </option>
-
+          <option value="">Gender</option>
           <option value="female">Female</option>
           <option value="male">Male</option>
         </select>
@@ -121,6 +118,9 @@ const global = css`
     width: 5ch;
   }
   .placeholder {
+    color: hsl(0, 0%, 50);
+  }
+  select.selector:first-child {
     color: hsl(0, 0%, 50);
   }
 `;

@@ -24,7 +24,11 @@ class SearchBox extends Component {
   render() {
     return (
       <div className={styles}>
-        {!this.state.toggle ? <AutoSearchBox /> : <ListSearchBox />}
+        {!this.state.toggle ? (
+          <AutoSearchBox toggle={this.state.toggle} />
+        ) : (
+          <ListSearchBox />
+        )}
         <Toggle checked={!this.state.toggle} toggle={this.toggle} />
       </div>
     );

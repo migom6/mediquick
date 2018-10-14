@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { css } from "emotion";
 import MedicalCare from "../presentational/MedicalCare";
 import Header from "../presentational/Header";
@@ -29,7 +29,12 @@ export default class Diseases extends Component {
     const { result, error, isLoading } = this.state;
     const { disease, personal } = this.props;
     if (error === true) {
-      return <div>No result found</div>;
+      return (
+        <div className={styled}>
+          <Header />
+          <div>No result found</div>
+        </div>
+      );
     }
     if (isLoading === true) {
       return (
