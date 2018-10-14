@@ -9,7 +9,6 @@ import { set_disease } from "../redux/medicActions";
 
 class DiseaseCard extends Component {
   goMedicare = () => {
-    console.log(this.props.info.prof_name);
     this.props.setDisease(this.props.info.prof_name);
   };
   render() {
