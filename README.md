@@ -21,13 +21,12 @@ MedicQuick is an web app, which is use to suggest users possible treatments from
 
 ![](https://github.com/migom6/mediquick/blob/master/assets/main.png)
 
- - **Full-Text-Search:** Search with every word of all websites & PDFs you visited. Up to 5 years of your personal web-research locally and in the browser. ([60s Tutorial](https://www.youtube.com/watch?v=GwOMrTh_q9M))
- - **Associative filtering:** Remember only visit time, domain or custom tags?**
- - **Web Annotations:** Add notes to websites and pieces of text in them ([60s Tutorial](https://www.youtube.com/watch?v=uEMmZ77IltE&feature=youtu.be))
- - **Memex.Link** Share links to specific pieces of text in any website, instead of copy-pasting the segements and urls you want to show someone. ([30s Tutorial](https://www.youtube.com/watch?v=lLcOVTqsMC8))
- - **Flexible Organisation**: Add bookmarks, tags or sort websites into lists. ([60s Tutorial](https://www.youtube.com/watch?v=6BOKwluMjKg))
- - **Google & DuckDuckGo integration:** See Memex reults while searching with your favorite search engine. 
- - **Full Data Ownership** All personal data is stored and processed on your own computer and will **never ever ever EVER** be shared or used without your consent. Here at WorldBrain, we are highly concerned about your privacy, data ownership and security. For more info please see our [privacy policy](#privacy-policy) for more details.
+ - **Full-Text-Search:** Search issues and symptoms using natural language *eg: I am having fever and headache*
+ - **Drop Down:** Get list of all available symptoms and issues from where you can select from**
+ - **Auto-complete list:** As you type you can see the list of possible symptoms. 
+ - **Diagnosis** For some selected combination of symptoms find the possible diagnosis.
+ - **Treatments**: Get treatment suggestions when you select a particular diagnosis.
+ - **Caching data** The treatment data that has been scraped is saved in a database, so that the responses of the subsequent requests for the same diagnosis is faster
 
 ## Project Status
 Memex is [available for Chrome and Firefox](https://worldbrain.io) and under active development by [our wonderful team](https://worldbrain.io/team).
