@@ -59,7 +59,7 @@ Mediquick comprises of frontend and backend web technologies.
   ```bash tests.sh```
 
 ## Documentation
- Documentation of Frontend and Backend are available in [/frontend/README.md](https://github.com/migom6/mediquick/frontend/README.md) and [/backend/README.md](https://github.com/migom6/mediquick/backend/README.md) respectively. 
+ Documentation of Frontend and Backend are available in [/frontend/README.md](https://github.com/migom6/mediquick/blob/master/frontend/README.md) and [/backend/README.md](https://github.com/migom6/mediquick/blob/master/backend/README.md) respectively. 
  
 ## Contact
 
