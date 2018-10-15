@@ -2,37 +2,35 @@
 
 ### Table Of Content
 
-1. [Goal](#vision--mission)
-1. [MediQuick Features](#memex-features)
-1. [Dependencies and Technologies Used](#dependency)
+1. [Goal](#goal)
+1. [MediQuick Features](#mediquick-features)
+1. [Dependencies and Technologies Used](#dependencies-and-technologies-used)
 1. [Project Status](#project-status)
     1. [Roadmap](#roadmap)
 1. [Contact](#contact)
-1. [License + Privacy Policy](#license--privacy-policy)
 
 
 ## Goal
 
-**The goal** is to find a list of diagnosis from a list of medical symptoms, and also give out proper suggestion for treatments and speacialist for a given medical condition/diagnosis.
+**The goal** is to find a list of diagnosis from a list of medical symptoms, and also give out proper suggestion for treatments and specialist for a given medical condition/diagnosis.
 
 **This project is an MVP** and is solely made for the purpose of competing for getting selected in hackercamp 2018, innovaccer
 
-## MedicQuick' Features
-MedicQuick is an web app, which is use to suggest users possible treatments from user input information. 
+## MediQuick Features
+MedicQuick is a web app, which is use to suggest users possible treatments from user input information. 
 
-![](https://worldbrain.io/wp-content/uploads/2018/09/Combo4.png)
+![](https://github.com/migom6/mediquick/blob/master/assets/main.png)
 
- - **Full-Text-Search:** Search with every word of all websites & PDFs you visited. Up to 5 years of your personal web-research locally and in the browser. ([60s Tutorial](https://www.youtube.com/watch?v=GwOMrTh_q9M))
- - **Associative filtering:** Remember only visit time, domain or custom tags?**
- - **Web Annotations:** Add notes to websites and pieces of text in them ([60s Tutorial](https://www.youtube.com/watch?v=uEMmZ77IltE&feature=youtu.be))
- - **Memex.Link** Share links to specific pieces of text in any website, instead of copy-pasting the segements and urls you want to show someone. ([30s Tutorial](https://www.youtube.com/watch?v=lLcOVTqsMC8))
- - **Flexible Organisation**: Add bookmarks, tags or sort websites into lists. ([60s Tutorial](https://www.youtube.com/watch?v=6BOKwluMjKg))
- - **Google & DuckDuckGo integration:** See Memex reults while searching with your favorite search engine. 
- - **Full Data Ownership** All personal data is stored and processed on your own computer and will **never ever ever EVER** be shared or used without your consent. Here at WorldBrain, we are highly concerned about your privacy, data ownership and security. For more info please see our [privacy policy](#privacy-policy) for more details.
+ - **Full-Text-Search:** Search issues and symptoms using natural language *eg: I am having fever and headache.*
+ - **Drop Down:** Get list of all available symptoms and issues from where you can multi select. 
+ - **Auto-complete list:** As you type you can see the list of possible symptoms. 
+ - **Diagnosis** For some selected combination of symptoms find the possible diagnosis.
+ - **Treatments**: Get treatment suggestions when you select a particular diagnosis.
+ - **Caching data** The treatment data that has been scraped is saved in a database, so that the responses of the subsequent requests for the same diagnosis is faster.
 
-## Project Status
-Memex is [available for Chrome and Firefox](https://worldbrain.io) and under active development by [our wonderful team](https://worldbrain.io/team).
-Memex is currently in beta status and serves almost 10.000 users. We still have some non-critical bugs, but all in all Memex runs smoothly. (Found another bug? [Please do tell](#report-bugs-&-feature-requests))
+## Dependencies and Technologies Used
+Mediquick comprises of frontend and backend web technologies.
+
 
 ### Roadmap:
 - [Automatic Backup to Memex Cloud](https://worldbrain.io/product/cloud-backup/)
