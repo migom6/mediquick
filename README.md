@@ -30,6 +30,18 @@ MedicQuick is a web app, which is use to suggest users possible treatments from 
 
 ## Dependencies and Technologies Used
 Mediquick comprises of frontend and backend web technologies.
+![](https://github.com/migom6/mediquick/blob/master/assets/tech-logo.png)
+1. ### Frontend
+    1. React(UI Library)
+    2. Emotion(CSS in JS)
+    3. Redux + Redux Thunk(State UI)
+    4. Jest(Unit testing for UI)
+2. ### Backend
+    1. Flask(to create routes)
+    3. PyMongo(to save data)
+    4. mLabs(online cloud mongodb service)
+    5. python unit test module
+    6. selenium with firefox driver(web scraping in javascript enabled sites)
 
 
 ### Roadmap:
