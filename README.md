@@ -30,6 +30,8 @@ MedicQuick is a web app, which is use to suggest users possible treatments from 
 
 ## Dependencies and Technologies Used
 Mediquick comprises of frontend and backend web technologies.
+![](https://github.com/migom6/mediquick/blob/master/assets/tech-logo.png)
+
 
 
 ### Roadmap:
