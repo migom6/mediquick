@@ -1,7 +1,7 @@
 import requests
 
 def generatetoken():
-  x = "Bearer t7HZc_DIM-COIN_COM_AUT:UsN1/zfEB/qDZ3PcqLAgYw=="
+  x = "Bearer Mk9r2_GMAIL_COM_AUT:CRdGgfb4bAihZ1tmm64gjA=="
 
   headers = {
     'Content-Type':'application/json',
