@@ -2,9 +2,9 @@
 
 ### Table Of Content
 
-1. [Goal](#vision--mission)
+1. [Goal](#goal)
 1. [MediQuick Features](#mediquick-features)
-1. [Dependencies and Technologies Used](#dependency)
+1. [Dependencies and Technologies Used](#dependencies-and-technologies-used)
 1. [Project Status](#project-status)
     1. [Roadmap](#roadmap)
 1. [Contact](#contact)
@@ -12,12 +12,12 @@
 
 ## Goal
 
-**The goal** is to find a list of diagnosis from a list of medical symptoms, and also give out proper suggestion for treatments and speacialist for a given medical condition/diagnosis.
+**The goal** is to find a list of diagnosis from a list of medical symptoms, and also give out proper suggestion for treatments and specialist for a given medical condition/diagnosis.
 
 **This project is an MVP** and is solely made for the purpose of competing for getting selected in hackercamp 2018, innovaccer
 
-## MedicQuick' Features
-MedicQuick is an web app, which is use to suggest users possible treatments from user input information. 
+## MedicQuick Features
+MedicQuick is a web app, which is use to suggest users possible treatments from user input information. 
 
 ![](https://github.com/migom6/mediquick/blob/master/assets/main.png)
 
@@ -28,9 +28,9 @@ MedicQuick is an web app, which is use to suggest users possible treatments from
  - **Treatments**: Get treatment suggestions when you select a particular diagnosis.
  - **Caching data** The treatment data that has been scraped is saved in a database, so that the responses of the subsequent requests for the same diagnosis is faster
 
-## Project Status
-Memex is [available for Chrome and Firefox](https://worldbrain.io) and under active development by [our wonderful team](https://worldbrain.io/team).
-Memex is currently in beta status and serves almost 10.000 users. We still have some non-critical bugs, but all in all Memex runs smoothly. (Found another bug? [Please do tell](#report-bugs-&-feature-requests))
+## Dependencies and Technologies Used
+Mediquick comprises of frontend and backend web technologies.
+
 
 ### Roadmap:
 - [Automatic Backup to Memex Cloud](https://worldbrain.io/product/cloud-backup/)
