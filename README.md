@@ -47,6 +47,7 @@ Mediquick comprises of frontend and backend web technologies.
 - First clone this repo </br>
   ```git clone https://github.com/migom6/mediquick.git```</br>
 - Download and install the firefox gecko driver [here](https://github.com/mozilla/geckodriver/releases)</br>
+- Create a MongoDb database locally or from [mLabs](https://mlab.com).
 - Set the environment variables in frontend/.env and backend/env.py</br>
 - Run the script with bash start.sh </br>
 ```bash start.sh```
@@ -58,7 +59,7 @@ Mediquick comprises of frontend and backend web technologies.
   ```bash tests.sh```
 
 ## Documentation
- Documentation of Frontend and Backend are available in [https://github.com/migom6/mediquick/frontend/Readme.md](#frontend) and [https://github.com/migom6/mediquick/backend/Readme.md](#backend) respectively. 
+ Documentation of Frontend and Backend are available in [https://github.com/migom6/mediquick/frontend/README.md](#frontend) and [https://github.com/migom6/mediquick/backend/README.md](#backend) respectively. 
  
 ## Contact
 
