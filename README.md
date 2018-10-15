@@ -16,7 +16,7 @@
 
 **This project is an MVP** and is solely made for the purpose of competing for getting selected in hackercamp 2018, innovaccer
 
-## MedicQuick Features
+## MediQuick Features
 MedicQuick is a web app, which is use to suggest users possible treatments from user input information. 
 
 ![](https://github.com/migom6/mediquick/blob/master/assets/main.png)
