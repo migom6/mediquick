@@ -5,6 +5,7 @@
 1. [Goal](#goal)
 1. [MediQuick Features](#mediquick-features)
 1. [Dependencies and Technologies Used](#dependencies-and-technologies-used)
+1. [Installation](#installation)
 1. [Project Status](#project-status)
     1. [Roadmap](#roadmap)
 1. [Contact](#contact)
@@ -42,6 +43,16 @@ Mediquick comprises of frontend and backend web technologies.
     4. mLabs(online cloud mongodb service)
     5. python unit test module
     6. selenium with firefox driver(web scraping in javascript enabled sites)
+    
+## Installation
+First clone this repo </br>
+```git clone https://github.com/migom6/mediquick.git```</br>
+Download and install the firefox gecko driver [here](https://github.com/mozilla/geckodriver/releases)</br>
+Set the environment variables in frontend/.env and backend/env.py</br>
+Run the script with bash start.sh </br>
+```bash start.sh```
+
+
 
 
 ### Roadmap:
