@@ -21,12 +21,12 @@ MedicQuick is a web app, which is use to suggest users possible treatments from 
 
 ![](https://github.com/migom6/mediquick/blob/master/assets/main.png)
 
- - **Full-Text-Search:** Search issues and symptoms using natural language *eg: I am having fever and headache*
- - **Drop Down:** Get list of all available symptoms and issues from where you can select from**
+ - **Full-Text-Search:** Search issues and symptoms using natural language *eg: I am having fever and headache.*
+ - **Drop Down:** Get list of all available symptoms and issues from where you can multi select. 
  - **Auto-complete list:** As you type you can see the list of possible symptoms. 
  - **Diagnosis** For some selected combination of symptoms find the possible diagnosis.
  - **Treatments**: Get treatment suggestions when you select a particular diagnosis.
- - **Caching data** The treatment data that has been scraped is saved in a database, so that the responses of the subsequent requests for the same diagnosis is faster
+ - **Caching data** The treatment data that has been scraped is saved in a database, so that the responses of the subsequent requests for the same diagnosis is faster.
 
 ## Dependencies and Technologies Used
 Mediquick comprises of frontend and backend web technologies.
