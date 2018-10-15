@@ -45,15 +45,16 @@ Mediquick comprises of frontend and backend web technologies.
     6. selenium with firefox driver(web scraping in javascript enabled sites)
     
 ## Installation
-First clone this repo </br>
-```git clone https://github.com/migom6/mediquick.git```</br>
-Download and install the firefox gecko driver [here](https://github.com/mozilla/geckodriver/releases)</br>
-Set the environment variables in frontend/.env and backend/env.py</br>
-Run the script with bash start.sh </br>
+- First clone this repo </br>
+  ```git clone https://github.com/migom6/mediquick.git```</br>
+- Download and install the firefox gecko driver [here](https://github.com/mozilla/geckodriver/releases)</br>
+- Set the environment variables in frontend/.env and backend/env.py</br>
+- Run the script with bash start.sh </br>
 ```bash start.sh```
 
-
-
+## Documentation
+ Documentation of Frontend and Backend are available in [/frontend](#frontend) and [/backend](#backend) respectively. 
+  
 
 ### Roadmap:
 - [Automatic Backup to Memex Cloud](https://worldbrain.io/product/cloud-backup/)
