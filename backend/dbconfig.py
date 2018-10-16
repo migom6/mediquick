@@ -5,5 +5,6 @@ def dbconfig(DB_NAME, DB_HOST, DB_PORT, DB_USER, DB_PASS):
     db = connection[DB_NAME]
     db.authenticate(DB_USER, DB_PASS)
     return(db, True)
-  except:
+  except Exception as exc:
+    print('Error while connecting', exc)
     return(None, False)
