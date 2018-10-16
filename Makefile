@@ -1,10 +1,15 @@
 build-frontend:
 	@cd frontend && npm run build
 
-serve:
+serve: 	
 	@cd backend && python app.py
 
-test-backend:
+test-backend: 
 	@cd backend && bash test.sh
+
 test-frontend:
 	@cd frontend && npm run test
+
+clean:
+	@rm frontend/build -r
+	@rm backend/*.log
