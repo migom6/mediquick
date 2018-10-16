@@ -59,8 +59,9 @@ cd backend
 pip install -r requirements.txt
 ```
 - Set the environment variables in .env file, check [.env.example](https://github.com/migom6/mediquick/blob/master/.env.example)
-- A [Makefile](https://github.com/migom6/mediquick/blob/master/Makefile) is setup up to help in the installation.
-```make build front```
+- A [Makefile](https://github.com/migom6/mediquick/blob/master/Makefile) is setup up to help in the installation. <br />
+ - **make build-frontend** This builds the react app and produces a build folder.
+ - **make serve** This starts the server and the web app can be accesed in the browser.
 
 ## Testing
   Tests are written using Jest (frontend) and unit test python (backend).
