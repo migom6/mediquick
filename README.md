@@ -48,16 +48,26 @@ Mediquick comprises of frontend and backend web technologies.
   ```git clone https://github.com/migom6/mediquick.git```</br>
 - Download and install the firefox gecko driver [here](https://github.com/mozilla/geckodriver/releases)</br>
 - Create a MongoDb database locally or from [mLabs](https://mlab.com).
-- Set the environment variables in frontend/.env and backend/env.py</br>
-- Run the script with bash start.sh </br>
-```bash start.sh```
+- Install the dependencies of frontend
+```
+cd frondend
+npm install
+```
+- Install the dependencies of backend
+```
+cd backend
+pip install -r requirements.txt
+```
+- Set the environment variables in .env file, check [.env.example](https://github.com/migom6/mediquick/blob/master/.env.example)
+- A [Makefile](https://github.com/migom6/mediquick/blob/master/Makefile) is setup up to help in the installation.
+```make build front```
 
 ## Testing
   Tests are written using Jest (frontend) and unit test python (backend).
-  The test are written in [/frontend/tests](https://github.com/migom6/mediquick/frontend/tests) and [/backend/tests](https://github.com/migom6/mediquick/backend/tests).
+  The test are written in [/frontend/tests](https://github.com/migom6/mediquick/frontend/tests) and [/backend/tests](https://github.com/migom6/mediquick/backend/tests). <br/>
   **To run tests for frontend** </br>
-  ```make test-frontend```
-  and
+  ```make test-frontend``` <br />
+       **and** <br />
    **To run tests for backend** </br>
   ```make test-backend```
 
