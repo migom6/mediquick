@@ -1,8 +1,9 @@
 import time
+import atexit
 import requests
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 from controller.symptoms import symptoms
 from controller.results import results
@@ -27,14 +28,22 @@ else:
     print("not connected to database, no caching of result")
 
 # middlewares
-app = Flask(__name__, static_url_path='/')
+# app = Flask(__name__, static_url_path='/')
+app = Flask(__name__,
+            static_folder='../frontend/build/static',
+            template_folder='../frontend/build')
 CORS(app)
 # routes
 
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def frontend(path):
+    return render_template('index.html')
 
-@app.route('/')
-def root():
-    return app.send_static_file('index.html')
+
+# @app.route('/')
+# def root():
+#     return app.send_static_file('index.html')
 
 
 @app.route('/symptoms')
@@ -60,11 +69,13 @@ def hello():
     return "Alive!!!"
 
 
-@app.route('/quit')
+# @app.route('/quit')
+@atexit.register
 def quitfirefox():
     driver.quit()
+    print("Firefox successfully closed.")
     return("successfully quit gecko")
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True,port=5002)
+    app.run(host=env.HOST, debug=env.DEBUG, port=env.PORT)
