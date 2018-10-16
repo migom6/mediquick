@@ -17,17 +17,23 @@ pip install -r requirements.txt
 - **Create an env.py by copying env.example.py and setting the required env variables**
 
 ### Routes
-* get `/symptoms` - name of the user
-* get `/diagnosis`
-  ```body {
+* get `/symptoms` - Get list of all symptoms
+* get `/diagnosis` - Get list of diagnosis 
+
+```
+  body {
     symptoms
     gender
     year_of_birth
-  }```
-* get `/results`
-```{
+  }
+```
+* get `/results` - Get treatment results given a particular diagnosis
+
+```
+{
   disease
-}```
+}
+```
 
 
 ### Tests
