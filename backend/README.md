@@ -18,6 +18,7 @@ pip install -r requirements.txt
 
 ### Routes
 * get `/symptoms` - Get list of all symptoms
+
 * get `/diagnosis` - Get list of diagnosis 
 
 ```
@@ -30,22 +31,19 @@ pip install -r requirements.txt
 * get `/results` - Get treatment results given a particular diagnosis
 
 ```
-{
-  disease
-}
+  body {
+    disease
+  }
 ```
 
 
 ### Tests
-Tests are done using jests and can be found in [frontend/src/tests](https://github.com/migom6/mediquick/frontend/src/tests). ComponentName.test.js 
+Tests are done using python unit test can be found in [backend/src/tests](https://github.com/migom6/mediquick/backend/src/tests). 
 **To run tests**
 ```
-npm run test
+make test-backend 
 ```
-or
-```
-yarn test
-```
+
 
 
 
