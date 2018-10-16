@@ -65,7 +65,7 @@ pip install -r requirements.txt
 
 ## Testing
   Tests are written using Jest (frontend) and unit test python (backend).
-  The test are written in [/frontend/tests](https://github.com/migom6/mediquick/frontend/tests) and [/backend/tests](https://github.com/migom6/mediquick/backend/tests). <br/>
+  The test are written in [/frontend/tests](https://github.com/migom6/mediquick/tree/master/frontend/test) and [/backend/tests](https://github.com/migom6/mediquick/tree/master/backend/test). <br/>
   **To run tests for frontend** </br>
   ```make test-frontend``` <br />
        **and** <br />
