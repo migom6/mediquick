@@ -55,8 +55,11 @@ Mediquick comprises of frontend and backend web technologies.
 ## Testing
   Tests are written using Jest (frontend) and unit test python (backend).
   The test are written in [/frontend/tests](https://github.com/migom6/mediquick/frontend/tests) and [/backend/tests](https://github.com/migom6/mediquick/backend/tests).
-  **To run tests** </br>
-  ```bash tests.sh```
+  **To run tests for frontend** </br>
+  ```make test-frontend```
+  and
+   **To run tests for backend** </br>
+  ```make test-backend```
 
 ## Documentation
  Documentation of Frontend and Backend are available in [/frontend/README.md](https://github.com/migom6/mediquick/blob/master/frontend/README.md) and [/backend/README.md](https://github.com/migom6/mediquick/blob/master/backend/README.md) respectively. 
