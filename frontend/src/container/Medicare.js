@@ -18,7 +18,7 @@ export default class Diseases extends Component {
   }
 
   fetchdata = disease => {
-    fetch(`${process.env.REACT_APP_URL}/results/?disease=${disease}`)
+    fetch(`${process.env.REACT_APP_URL}/api/results/?disease=${disease}`)
       .then(response => response.json())
       .then(data => this.setState({ result: data.result, isLoading: false }))
       .catch(e => this.setState({ error: true }));

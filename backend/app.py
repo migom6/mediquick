@@ -21,7 +21,8 @@ driver = webdriver.Firefox(firefox_options=options,
 print("Firefox Headless Browser Invoked")
 token = generatetoken()
 print("Created token", token[:8])
-db, dbconnected = dbconfig(env.DB_NAME, env.DB_HOST, env.DB_PORT, env.DB_USER, env.DB_PASS)
+db, dbconnected = dbconfig(env.DB_NAME, env.DB_HOST,
+                           env.DB_PORT, env.DB_USER, env.DB_PASS)
 if(dbconnected):
     print("connected to database")
 else:
@@ -35,6 +36,7 @@ app = Flask(__name__,
 CORS(app)
 # routes
 
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def frontend(path):
@@ -46,13 +48,13 @@ def frontend(path):
 #     return app.send_static_file('index.html')
 
 
-@app.route('/symptoms')
+@app.route('/api/symptoms')
 def get_all_symptoms():
     res = symptoms(token)
     return res
 
 
-@app.route('/diagnosis')
+@app.route('/api/diagnosis')
 def get_all_diagnosis():
     res = diagnosis(token)
     return res
@@ -64,7 +66,7 @@ def getResults():
     return res
 
 
-@app.route('/alive')
+@app.route('/api/alive')
 def hello():
     return "Alive!!!"
 
