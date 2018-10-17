@@ -17,7 +17,7 @@
 
 **The goal** is to find a list of diagnosis from a list of medical symptoms, and also give out proper suggestion for treatments and specialist for a given medical condition/diagnosis.
 
-**This project is an MVP** and is solely made for the purpose of competing for getting selected in hackercamp 2018, innovaccer
+**This project is an MVP** and is solely made for the purpose of competing for getting selected in hackercamp 2019, innovaccer
 
 ## MediQuick Features
 MedicQuick is a web app, which is use to suggest users possible treatments from user input information. 
