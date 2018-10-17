@@ -3,7 +3,7 @@ import os
 
 
 def generatetoken():
-    x = f"Bearer {os.env.get('APIMEDIC_API_KEY')}"
+    x = f"Bearer {os.environ.get('APIMEDIC_API_KEY')}"
 
     headers = {
         'Content-Type': 'application/json',
