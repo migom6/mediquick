@@ -9,6 +9,7 @@
 1. [Dependencies and Technologies Used](#dependencies-and-technologies-used)
 1. [Installation](#installation)
 1. [Documentation](#documentation)
+1. [Testing](#testing)
 1. [Contact](#contact)
 
 
@@ -73,6 +74,9 @@ source .env
  - **make netlify** This publishes the frontend to netlify. [Check netlify.toml](https://github.com/migom6/mediquick/blob/master/netlify.toml)
 
 
+## Documentation
+ Documentation of Frontend and Backend are available in [/frontend/README.md](https://github.com/migom6/mediquick/blob/master/frontend/README.md) and [/backend/README.md](https://github.com/migom6/mediquick/blob/master/backend/README.md) respectively. 
+ 
 
 ## Testing
   Tests are written using Jest (frontend) and unit test python (backend).
@@ -83,9 +87,6 @@ source .env
    **To run tests for backend** </br>
   ```make test-backend```
 
-## Documentation
- Documentation of Frontend and Backend are available in [/frontend/README.md](https://github.com/migom6/mediquick/blob/master/frontend/README.md) and [/backend/README.md](https://github.com/migom6/mediquick/blob/master/backend/README.md) respectively. 
- 
 ## Contact
 
 Find me on [github](https://www.github.com/migom6/) or contact me [via email](mailto:migom6@gmail.com).
