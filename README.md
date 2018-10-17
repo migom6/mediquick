@@ -51,7 +51,7 @@ Mediquick comprises of frontend and backend web technologies.
 - Create a MongoDb database locally or from [mLabs](https://mlab.com).
 - Install the dependencies of frontend
 ```
-cd frondend
+cd frontend
 npm install
 ```
 - Install the dependencies of backend
