@@ -32,12 +32,16 @@ class ShowMoreDetails extends Component {
     const { issues } = this.props.medic;
     if (issues.length > 0) {
       return (
-        <div onClick={this.moreDetails}>
-          <span>
-            Found {issues.length} issues related to you, Click me for more
-            details
-          </span>
-          {this.state.details ? <div>{this.getNamesofSymptoms()}</div> : false}
+        <div className={styles} onClick={this.moreDetails}>
+          <div>
+            Found {issues.length} issues related to you,{" "}
+            <u>Click here for more details</u>
+          </div>
+          {this.state.details ? (
+            <div className="diagnosis">{this.getNamesofSymptoms()}</div>
+          ) : (
+            false
+          )}
         </div>
       );
     }
@@ -61,7 +65,9 @@ export default connect(
 )(ShowMoreDetails);
 
 const styles = css`
-  display: flex;
-  flex-direction: row;
+  cursor: pointer;
   align-items: center;
+  .diagnosis {
+    color: #b71540;
+  }
 `;

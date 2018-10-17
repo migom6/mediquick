@@ -59,6 +59,7 @@ const styled = css`
   padding-top: 40;
   padding-left: 20%;
   padding-right: 20%;
+  background: #fbfbfb;
   font-family: 'Heebo', sans-serif;
   @media (min-width: 320px) and (max-width: 480px) {
       padding-left: 0%;
