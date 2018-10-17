@@ -48,25 +48,6 @@ const Title = styled("h1")(props => ({
   color: "#0c2461"
 }));
 
-const Heading = styled("span")(props => ({
-  color: "#3B3B98",
-  fontSize: "2em",
-  fontWeight: "800",
-  marginTop: "15px",
-  marginBottom: "15px"
-}));
-
-const SubHeading = styled("span")(props => ({
-  color: "#3B3B98",
-  fontSize: "1.5em",
-  fontWeight: "500",
-  marginLeft: "12px"
-}));
-
-const Text = styled("span")(props => ({
-  marginLeft: "12px"
-}));
-
 const box = css`
   background: white !important;
   display: flex;

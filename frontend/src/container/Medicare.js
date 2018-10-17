@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { css } from "emotion";
 import MedicalCare from "../presentational/MedicalCare";
 import Header from "../presentational/Header";
