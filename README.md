@@ -1,5 +1,6 @@
 # <a id="MediQuick" href="https://mediquick.netlify.com">MediQuick</a>
-<a id="MediQuick" href="https://mediquick.netlify.com">Live Demo</a>
+<a id="MediQuick" href="https://mediquick.netlify.com">Live Demo</a> | <a id="MediQuick" href="https://youtu.be/wjn9IV7uCkM">Youtube Video Demo</a> 
+
 
 ### Table Of Content
 
