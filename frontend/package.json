@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "emotion": "^9.2.12",
+    "netlify-cli": "^2.1.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-emotion": "^9.2.12",
