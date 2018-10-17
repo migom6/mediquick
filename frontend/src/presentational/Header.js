@@ -9,10 +9,10 @@ const Header = props => {
         <span className="Quick">Quick</span>
       </a>
       <span className="right">
-        <a href="www.google.com" className="help">
+        <a href="http://www.google.com" className="help">
           Help
         </a>
-        <a href="www.github.com/migom6">Github</a>
+        <a href="https://www.github.com/migom6">Github</a>
       </span>
     </div>
   );
