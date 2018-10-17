@@ -1,4 +1,5 @@
-# <a id="MediQuick" href="#mediquick">MediQuick</a>
+# <a id="MediQuick" href="https://mediquick.netlify.com">MediQuick</a>
+<a id="MediQuick" href="https://mediquick.netlify.com">Live Demo</a>
 
 ### Table Of Content
 
@@ -59,9 +60,18 @@ cd backend
 pip install -r requirements.txt
 ```
 - Set the environment variables in .env file, check [.env.example](https://github.com/migom6/mediquick/blob/master/.env.example)
+- source the .env
+```
+source .env
+```
 - A [Makefile](https://github.com/migom6/mediquick/blob/master/Makefile) is setup up to help in the installation. <br />
  - **make build-frontend** This builds the react app and produces a build folder.
  - **make serve** This starts the server and the web app can be accesed in the browser.
+ - **make test-backend** This is use to test backend code.
+ - **make test-frontend** This is use to test the frontend code.
+ - **make netlify** This publishes the frontend to netlify. [Check netlify.toml](https://github.com/migom6/mediquick/blob/master/netlify.toml)
+
+
 
 ## Testing
   Tests are written using Jest (frontend) and unit test python (backend).
