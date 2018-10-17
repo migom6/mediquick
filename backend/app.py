@@ -60,7 +60,7 @@ def get_all_diagnosis():
     return res
 
 
-@app.route('/results/')
+@app.route('/api/results/')
 def getResults():
     res = results(db, dbconnected, driver)
     return res
