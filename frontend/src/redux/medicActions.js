@@ -43,7 +43,7 @@ export function set_disease(disease) {
 export function set_symptoms() {
   return (dispatch, getState) => {
     axios
-      .get(`${(process.env.REACT_APP_URL || '')}/symptoms`)
+      .get(`${process.env.REACT_APP_URL || ""}/symptoms`)
       .then(function(response) {
         dispatch(fetch_success_symptoms(response.data.results));
       })
@@ -79,7 +79,7 @@ export function set_diagnosis() {
       }
     };
     axios
-      .get(`${(process.env.REACT_APP_URL || '')}/diagnosis`, body)
+      .get(`${process.env.REACT_APP_URL || ""}/diagnosis`, body)
       .then(function(response) {
         dispatch(fetch_success_diagnosis(response.data.results));
       })
